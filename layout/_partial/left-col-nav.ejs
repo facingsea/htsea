@@ -1,0 +1,24 @@
+<% if (is_post()){ %>
+<div class="left-col-nav" id="left-col-nav">
+    <a href="javascript:void(0);" title="隐藏左侧">
+        <i class="fa fa-angle-double-left"></i>
+    </a>
+</div>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    $("#left-col-nav > a > i").click(function() {
+        var cls = $(this).attr("class");
+        if(cls.indexOf("fa-angle-double-left") > -1){
+            $(this).removeClass("fa-angle-double-left");
+            $(this).addClass("fa-angle-double-right");
+            $(this).parent().attr("title", "显示左侧");
+            $(this).parent().data("title", "显示左侧"); // 更新缓存
+        }else{
+            $(this).removeClass("fa-angle-double-right");
+            $(this).addClass("fa-angle-double-left");
+            $(this).parent().attr("title", "隐藏左侧");
+            $(this).parent().data("title", "隐藏左侧"); // 更新缓存
+        }
+    })
+</script>
+<% } %>
