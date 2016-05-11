@@ -8,7 +8,7 @@
 
             function() {
                 var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(a.data('title')).css({
                     top: offset.top - a.outerHeight() - 15,
                     left: offset.left + a.outerWidth()/2 + 1
                 }).fadeIn(function() {
